@@ -5,7 +5,6 @@
  */
 package com.example.interfa;
 import java.util.List;
-
 import com.example.model.PersonaModel;
 import java.util.Optional;
 

@@ -15,6 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.example.model")
 @ComponentScan(basePackages = "com.example.controller")
  @ComponentScan(basePackages = { "com.example.Repository.personaRepository" })
+@ComponentScan(basePackages = { "com.example.Repository.articuloRepository" })
  
  
  
