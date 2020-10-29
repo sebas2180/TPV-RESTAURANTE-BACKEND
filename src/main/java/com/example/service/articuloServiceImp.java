@@ -1,26 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.service;
 
-import org.springframework.util.StringUtils;
 import com.example.Repository.articuloRepository;
 import com.example.interfa.IArticuloService;
-import com.example.model.PersonaModel;
 import com.example.model.articuloModel;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import java.util.stream.Stream;
-import javax.transaction.Transactional;
 
 /**
  *
@@ -33,11 +20,6 @@ public class articuloServiceImp implements IArticuloService{
     @Autowired
     private articuloRepository articuloRepository;
     
-    
- 
-
- 
- 
 
     @Override
     public Optional<articuloModel> getFile(Long id) {
@@ -45,7 +27,6 @@ public class articuloServiceImp implements IArticuloService{
         System.out.println(art);
         return art;
     }
-
     @Override
     public Long save(articuloModel articuloModel) {
         try {
@@ -56,7 +37,6 @@ public class articuloServiceImp implements IArticuloService{
             System.out.println(e);
         }
         return null;
-    
     }
 
     @Override

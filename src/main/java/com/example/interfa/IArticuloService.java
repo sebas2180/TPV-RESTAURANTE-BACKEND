@@ -26,4 +26,6 @@ public interface IArticuloService {
     public Optional<articuloModel> getFile(Long id);
      
      public List<articuloModel> getAllArticulos  ();
+     
+   
 }

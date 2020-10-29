@@ -4,22 +4,22 @@
  * and open the template in the editor.
  */
 package com.example.Repository;
-import com.example.model.articuloModel;
 import javax.transaction.Transactional;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository; 
 import org.springframework.stereotype.Repository;
+import com.example.model.CategoriaModel;
+ 
 
 /**
  *
- * @author sebastian
+ * @author Sebas
  */
+
 @Repository
 @Transactional
-public interface articuloRepository extends JpaRepository<articuloModel, Long> {
+public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long>{
 
 
-    articuloModel saveAndFlush(articuloModel articuloModel);
-
-
+    CategoriaModel saveAndFlush(CategoriaModel categorialModel );
     
 }
