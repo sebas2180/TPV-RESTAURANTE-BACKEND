@@ -26,7 +26,7 @@ public class IvaServiceImpl implements iIvaService {
     public Long save(IvaModel ivaParameters) {
         try {
             IvaModel iva = IvaRepository.saveAndFlush(ivaParameters);
-            return iva.getId();
+            return iva.getId_iva();
         } catch (Exception e) {
             System.err.println(e);
         }

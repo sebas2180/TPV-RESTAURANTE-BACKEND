@@ -32,5 +32,16 @@ public class SalonController {
         }
         return null;
     }
+    @PostMapping(value="/salon/update")
+    public HashMap updateArticulo(@ModelAttribute SalonModel salonParameters){
+        HashMap<String,String> map = new HashMap();
+        try {
+          map.put( "repuesta",salonServiceimImpl.update(salonParameters));
+          return map;
+        } catch (Exception e) {
+            map.put( "repuesta",String.valueOf(e));
+        }
+        return null;
+    }
     
 }

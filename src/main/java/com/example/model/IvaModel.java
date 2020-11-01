@@ -29,21 +29,22 @@ public class IvaModel {
 
     public IvaModel() {
     }
+
+
     
 
-
     /**
-     * @return Long return the id
+     * @return Long return the id_iva
      */
-    public Long getId() {
+    public Long getId_iva() {
         return id_iva;
     }
 
     /**
-     * @param id the id to set
+     * @param id_iva the id_iva to set
      */
-    public void setId(Long id) {
-        this.id_iva = id;
+    public void setId_iva(Long id_iva) {
+        this.id_iva = id_iva;
     }
 
     /**

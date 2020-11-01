@@ -44,5 +44,19 @@ public class SalonServiceImpl implements ISalonService {
         // TODO Auto-generated method stub
         return null;
     }
+
+    @Override
+    public String update(SalonModel salonParameters) {
+        Optional<SalonModel> categoriaOptional = SalonRepository.findById(salonParameters.getId());
+        if (!categoriaOptional.isPresent()){
+            String repuesta =  "item no encontrado.";
+            return repuesta;
+        }
+        SalonRepository.save(salonParameters);
+        
+        String repuesta =  "Actualización exitosa.";
+        return repuesta;
+  
+    }
     
 }

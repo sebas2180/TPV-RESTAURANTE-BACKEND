@@ -18,8 +18,8 @@ public class MesaServiceImpl implements IMesaService {
 
     @Override
     public List<MesaModel> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+        return   mesaRepository.findAll() ;
+
     }
 
     @Override
@@ -43,5 +43,17 @@ public class MesaServiceImpl implements IMesaService {
     public Optional<MesaModel> ListId(int id) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public String update(MesaModel mesaParameters) {
+        Optional<MesaModel> categoriaOptional = mesaRepository.findById(mesaParameters.getId());
+        if (!categoriaOptional.isPresent()){
+            String repuesta =  "item no encontrado.";
+            return repuesta;
+        }
+        mesaRepository.save(mesaParameters);
+        String repuesta =  "Actualización exitosa.";
+        return repuesta;
     }
 }

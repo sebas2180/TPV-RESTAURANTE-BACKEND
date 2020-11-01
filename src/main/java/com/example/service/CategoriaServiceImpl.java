@@ -10,7 +10,7 @@ import java.util.List;
 import com.example.Repository.CategoriaRepository;
 import com.example.interfa.ICategoriaService;
 import com.example.model.CategoriaModel;
-
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +39,20 @@ public class CategoriaServiceImpl implements ICategoriaService {
            System.out.println(e);
         }
         return null;
+    }
+
+    @Override
+    public String update(CategoriaModel categoriaParameters) {
+        Optional<CategoriaModel> categoriaOptional = CategoriaRepository.findById(categoriaParameters.getId());
+        if (!categoriaOptional.isPresent()){
+            String repuesta =  "item no encontrado.";
+            return repuesta;
+        }
+        CategoriaRepository.save(categoriaParameters);
+        
+        String repuesta =  "Actualización exitosa.";
+        return repuesta;
+  
     }
     
 }

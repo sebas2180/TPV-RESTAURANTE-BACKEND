@@ -24,8 +24,12 @@ public interface IArticuloService {
     public Long save(articuloModel articuloModel) ;
     
     public Optional<articuloModel> getFile(Long id);
+
+    public List<articuloModel> getArticuloToCategoria(Long id_categoria);
      
      public List<articuloModel> getAllArticulos  ();
+
+     public String update(articuloModel articuloModel);
      
    
 }

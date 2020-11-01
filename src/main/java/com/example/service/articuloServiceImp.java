@@ -57,6 +57,26 @@ public class articuloServiceImp implements IArticuloService{
         map.put("Mensaje", "Error! El Articulo no existe");
                 return map;
     }
+
+    @Override
+    public String update(articuloModel articuloParameters) {
+        
+        Optional<articuloModel> articuloOptional = articuloRepository.findById(articuloParameters.getId());
+        if (!articuloOptional.isPresent()){
+            String repuesta =  "item no encontrado.";
+            return repuesta;
+        }
+        articuloRepository.save(articuloParameters);
+        
+        String repuesta =  "Actualización exitosa.";
+        return repuesta;
+  
+    }
+
+    @Override
+    public List<articuloModel> getArticuloToCategoria(Long id) {
+        return   articuloRepository.findById_categoria(id) ;
+    }
 		
     
 }

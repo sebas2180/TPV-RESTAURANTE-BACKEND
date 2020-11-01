@@ -18,6 +18,7 @@ public interface ICategoriaService {
 
     public List<CategoriaModel> getAllArticulos();
 
+    public String update(CategoriaModel CategoriaModel);
 
     public Long save(CategoriaModel categoriaModel);
     

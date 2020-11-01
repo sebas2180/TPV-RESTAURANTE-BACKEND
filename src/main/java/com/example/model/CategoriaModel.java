@@ -31,7 +31,7 @@ public class CategoriaModel {
 
     @ManyToOne
     @JoinColumn(name = "id_iva")
-    private IvaModel ivaModel;
+    private IvaModel iva;
 
 
     // GETTS AND SETTERS
@@ -39,6 +39,8 @@ public class CategoriaModel {
     public CategoriaModel() {
     }
     
+
+
 
     /**
      * @return Long return the id
@@ -97,17 +99,17 @@ public class CategoriaModel {
     }
 
     /**
-     * @return IvaModel return the ivaModel
+     * @return IvaModel return the iva
      */
-    public IvaModel getIvaModel() {
-        return ivaModel;
+    public IvaModel getIva() {
+        return iva;
     }
 
     /**
-     * @param ivaModel the ivaModel to set
+     * @param iva the iva to set
      */
-    public void setIvaModel(IvaModel ivaModel) {
-        this.ivaModel = ivaModel;
+    public void setIva(IvaModel iva) {
+        this.iva = iva;
     }
 
 }

@@ -14,5 +14,8 @@ public interface ISalonService {
 
     public void delete(int id);
     
+    public String update(SalonModel SalonModel);
+
+
     public Optional<SalonModel>ListId(int id);
 }

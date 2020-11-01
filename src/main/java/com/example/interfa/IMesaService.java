@@ -14,4 +14,6 @@ public interface IMesaService {
     public void delete(int id);
     
     public Optional<MesaModel>ListId(int id);
+
+    public String update(MesaModel MesaModel);
 }

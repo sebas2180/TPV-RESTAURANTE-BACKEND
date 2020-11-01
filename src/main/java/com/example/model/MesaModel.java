@@ -47,12 +47,15 @@ public class MesaModel {
     private Integer comensales;
 
 
+    @Column(name = "numero")
+    private Integer numero;
 
 
 
 
     public MesaModel() {
     }
+ 
  
 
 
@@ -110,6 +113,20 @@ public class MesaModel {
      */
     public void setComensales(Integer comensales) {
         this.comensales = comensales;
+    }
+
+    /**
+     * @return Integer return the numero
+     */
+    public Integer getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
 }
