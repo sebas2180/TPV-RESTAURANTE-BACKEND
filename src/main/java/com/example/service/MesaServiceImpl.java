@@ -56,4 +56,12 @@ public class MesaServiceImpl implements IMesaService {
         String repuesta =  "Actualización exitosa.";
         return repuesta;
     }
+
+    @Override
+    public MesaModel findBy_numero(long numero) {
+       
+        return mesaRepository.findBy_numero(numero);
+    }
+
+
 }

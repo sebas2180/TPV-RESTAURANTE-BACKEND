@@ -17,6 +17,9 @@ public class Mesa_articuloServiceImpl implements Imesa_articuloService {
     @Autowired
     mesa_articulosRepository mesa_articulosRepository;
 
+    @Autowired
+    MesaServiceImpl MesaServiceImpl;
+
     @Override
     public List<mesa_articulosModel> findAll() {
         // TODO Auto-generated method stub
@@ -26,6 +29,7 @@ public class Mesa_articuloServiceImpl implements Imesa_articuloService {
     @Override
     public Long save(mesa_articulosModel item) {
         try {
+            item.setMesa(MesaServiceImpl.findBy_numero(item.getMesa().getNumero()));
             mesa_articulosModel mesa = mesa_articulosRepository.saveAndFlush(item);
             return item.getId();
         } catch (Exception e) {
@@ -36,7 +40,6 @@ public class Mesa_articuloServiceImpl implements Imesa_articuloService {
 
     @Override
     public Optional<mesa_articulosModel> ListId(int id) {
-        // TODO Auto-generated method stub
         return null;
     }
 
@@ -67,5 +70,13 @@ public class Mesa_articuloServiceImpl implements Imesa_articuloService {
         map.put("Mensaje", "Error! El item no existe");
                 return map;
     }
+    // @Override
+	// public String exist_item(Long id_categoria, Long id_articulo) {
+	// 	return mesa_articulosRepository.exist_item(id_categoria, id_articulo);
+    // }
+    
+    public List<mesa_articulosModel> findBy_nroMesa(Long numero) {
+		return mesa_articulosRepository.findBy_nroMesa(numero);
+	}
     
 }

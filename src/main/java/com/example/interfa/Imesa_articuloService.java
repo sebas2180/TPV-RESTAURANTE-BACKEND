@@ -16,6 +16,7 @@ public interface Imesa_articuloService {
     
     public Optional<mesa_articulosModel>ListId(int id);
 
-    
+    public List<mesa_articulosModel>findBy_nroMesa(Long numero);
+
     public String update(mesa_articulosModel mesa_articulosModel);
 }

@@ -26,6 +26,9 @@ public class mesa_articulosModel {
     @Column(name = "cantidad")
     private Long cantidad;
 
+    @Column(name = "comentario")
+    private String comentario;
+
     @ManyToOne
     @JoinColumn(name="id_mesa")
     private MesaModel mesa;
@@ -43,6 +46,8 @@ public class mesa_articulosModel {
     }
     
 
+
+
     /**
      * @return Long return the id
      */
@@ -55,6 +60,34 @@ public class mesa_articulosModel {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * @return Long return the cantidad
+     */
+    public Long getCantidad() {
+        return cantidad;
+    }
+
+    /**
+     * @param cantidad the cantidad to set
+     */
+    public void setCantidad(Long cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    /**
+     * @return String return the comentario
+     */
+    public String getComentario() {
+        return comentario;
+    }
+
+    /**
+     * @param comentario the comentario to set
+     */
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     /**
@@ -83,20 +116,6 @@ public class mesa_articulosModel {
      */
     public void setArticulo(articuloModel articulo) {
         this.articulo = articulo;
-    }
-
-    /**
-     * @return Long return the cantidad
-     */
-    public Long getCantidad() {
-        return cantidad;
-    }
-
-    /**
-     * @param cantidad the cantidad to set
-     */
-    public void setCantidad(Long cantidad) {
-        this.cantidad = cantidad;
     }
 
 }
