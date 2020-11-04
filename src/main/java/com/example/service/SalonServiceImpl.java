@@ -18,8 +18,7 @@ public class SalonServiceImpl implements ISalonService {
 
     @Override
     public List<SalonModel> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+        return SalonRepository.findAll();
     }
 
     @Override

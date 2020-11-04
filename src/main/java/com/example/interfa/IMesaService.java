@@ -1,5 +1,7 @@
 package com.example.interfa;
+
 import java.util.Optional;
+import java.util.HashMap;
 import java.util.List;
 import com.example.model.MesaModel;
 
@@ -9,6 +11,8 @@ public interface IMesaService {
     public List<MesaModel>findAll();
 
     public MesaModel findBy_numero(long numero);
+
+    public HashMap findTotalBy_numero(long numero);
     
     
     public Long save(MesaModel persona);

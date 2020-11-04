@@ -16,6 +16,5 @@ public interface ISalonService {
     
     public String update(SalonModel SalonModel);
 
-
     public Optional<SalonModel>ListId(int id);
 }

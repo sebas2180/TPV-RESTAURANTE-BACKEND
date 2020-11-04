@@ -3,7 +3,10 @@ package com.example.controller;
 import java.util.HashMap;
 
 import com.example.model.MesaModel;
+import com.example.model.mesa_articulosModel;
 import com.example.service.MesaServiceImpl;
+import com.example.service.Mesa_articuloServiceImpl;
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -26,6 +29,10 @@ public class MesaController {
     @Autowired
     MesaServiceImpl mesaServiceImpl;
 
+    
+    @Autowired
+    Mesa_articuloServiceImpl Mesa_articuloServiceImpl;
+
     @PostMapping(value="/mesa/add")
     public HashMap addMesa(@ModelAttribute MesaModel mesaParameters){
         try {
@@ -40,6 +47,7 @@ public class MesaController {
 
         return null;
     }
+    
     @PostMapping(value="/mesa/update")
     public HashMap updateArticulo(@ModelAttribute MesaModel mesaParameters){
         HashMap<String,String> map = new HashMap();
@@ -51,10 +59,19 @@ public class MesaController {
         }
         return null;
     }
+    
     @GetMapping(value ="/mesa/listAll")
     public List findAll(){
         List mesas =  mesaServiceImpl.findAll();
         return mesas;      
+    }
+    
+    @RequestMapping(value = "/mesa/findTotal/By_nroMesa/{numero}", method = RequestMethod.GET)
+    @ResponseBody	
+    public HashMap findTotalBy_nroMesa(@PathVariable final Long numero){
+        return mesaServiceImpl.findTotalBy_numero(numero);
+         
+
     }
     
     @RequestMapping(value = "/mesa/findBy_numero/{numero}", method = RequestMethod.GET)

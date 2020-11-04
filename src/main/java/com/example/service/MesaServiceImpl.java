@@ -1,11 +1,13 @@
 package com.example.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
 import com.example.Repository.MesaRepository;
 import com.example.interfa.IMesaService;
 import com.example.model.MesaModel;
+import com.example.model.detalle_facturaModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,6 +63,22 @@ public class MesaServiceImpl implements IMesaService {
     public MesaModel findBy_numero(long numero) {
        
         return mesaRepository.findBy_numero(numero);
+    }
+
+    @Override
+    public HashMap findTotalBy_numero(long numero) {
+        HashMap<String,String> map = new HashMap<>();
+        try {
+            detalle_facturaModel  me= mesaRepository.findTotalBy_numero(numero);
+            System.out.println(me.getTotal_mesa());
+            map.put("total", "");
+            map.put("porcentaje_cuota", "");
+            map.put("cuota", "");
+            return map;
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        return map;
     }
 
 
